@@ -37,10 +37,9 @@
 }
 
 .rooms {
-  background-color: #2f3e51;
+  background-color: #2F3E51;
   height: calc(100vh - 100px);
   padding: 0 20px;
-  /* ルーム数増加対策によるスクロール追加 */
   overflow: scroll;
 }
 
@@ -49,11 +48,9 @@
 }
 
 .room-name a {
-  color: white;
   text-decoration: none;
+  color: white;
 }
-
-/* ----------------------------------- */
 
 .chat {
   background-color: #ffffff;
