@@ -40,6 +40,7 @@
   background-color: #2F3E51;
   height: calc(100vh - 100px);
   padding: 0 20px;
+  /* ルーム数増加によるはみ出し対策のスクロール */
   overflow: scroll;
 }
 
@@ -52,6 +53,8 @@
   color: white;
 }
 
+/* -------------------------------- */
+
 .chat {
   background-color: #ffffff;
   width: calc(100% - 300px);
@@ -60,16 +63,115 @@
 .chat-header {
   height: 100px;
   padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.header-title {
+  color: #333;
+  font-size: 24px;
+  margin-top: 36px;
+}
+
+.header-button {
+  margin-top: 40px;
+}
+
+.header-button a{
+  border: 1px solid darkred;
+  padding: 20px;
+  color: darkred;
+  /* a要素の下線を削除 */
+  text-decoration: none;
 }
 
 .messages {
   background-color: #FAFAFA;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
+  overflow: scroll;
+}
+
+.message {
+  margin: 10px 0;
+}
+
+.upper-message{
+  display: flex;
+}
+
+.message-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
 }
 
 .form {
   background-color: #DDDDDD;
   height: 90px;
   padding: 20px 40px;
+  /* 入力項目と送信ボタンを横並びにするために必要 */
+  display: flex;
+  box-sizing: border-box;
+  /* formは親要素であるchatと同じ幅になる */
+}
+
+.form-input{
+  background-color: white;
+  /* メッセージ欄と画像ボタンを横並びにさせるために必要 */
+  display: flex;
+  /* 入力項目の長さは、親要素であるformの長さから送信ボタン＋余白分差し引いた値 */
+  width: 100%;
+}
+
+.form-message{
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+  /* メッセージ欄の枠を削除 */
+  border: none;
+}
+
+.form-submit{
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #38aef0;
+  /* 送信ボタンの枠を削除 */
+  border: none;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+  /* ラベル要素の子要素にinput要素でfile選択(type=file)が入っている */
+  /* ラベル要素である「画像」の文字をクリックすると、子要素のinputも作動する */
+}
+
+.hidden {
+  /* input要素のファイル選択の表示を削除 */
+  display: none;
 }
