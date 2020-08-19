@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # new_room_path             GET     /rooms/new(.:format)	rooms#new
   
   # / ルート への遷移先
-  root "messages#index"
+  root "rooms#index"
 
   resources :users, only: [:edit, :update]
   resources :rooms, only: [:new, :create]
