@@ -17,6 +17,12 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to root_path
+  end
+
   private
 
   # ルームのカラム許可、user_idsは同じルームの複数userをキーとして中間テーブルに保存
